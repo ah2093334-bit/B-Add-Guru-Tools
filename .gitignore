@@ -1,0 +1,9 @@
+# Never commit secrets
+.env
+.env.*
+*.pem
+service-role*
+private-release/
+Cinematic-Movie-Factory-*.zip
+
+PRIVATE-LOCAL-ENGINE/

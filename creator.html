@@ -1,0 +1,49 @@
+<!doctype html><html><head><title>Cinematic Movie Factory — B Add Guru Tools</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050914"><link rel="icon" href="assets/images/logo.svg"><link rel="stylesheet" href="assets/css/style.css"></head><body><nav class="nav"><div class="wrap navin"><a class="brand" href="index.html"><img src="assets/images/logo.svg" alt="B Add Guru Tools"></a><div class="links"><a href="index.html">Home</a><a href="tools.html">Tools</a><a href="pricing.html">Pricing</a><a href="help.html">Help</a><a href="contact.html">Contact</a><a class="btn" href="login.html">Login</a><a class="btn primary" href="login.html#create">Create Account</a></div><button class="btn mobile" onclick="location.href='login.html'">Login</button></div></nav>
+<main class="section"><div class="wrap">
+<div class="studioTop">
+  <div><span class="eyebrow">AUTO MODE · NO USER MODEL SETTINGS</span><h1>Cinematic Movie Factory</h1><p class="sectionLead">The system checks this device and chooses the safest available local mode automatically. Paid cloud API settings stay hidden on the server.</p></div>
+  <div class="statusBoard"><div class="statusOrb"></div><div><b id="statusTitle">Checking device…</b><div id="statusText">Hardware and local engine checks are starting.</div></div></div>
+</div>
+
+<div class="grid autoGrid">
+ <div class="card"><div class="ico">🖥️</div><h3>Device Check</h3><p id="deviceInfo">Detecting browser hardware…</p><span id="deviceBadge" class="status">CHECKING</span></div>
+ <div class="card"><div class="ico">🎞️</div><h3>Selected Workflow</h3><p id="workflowText">Automatic selection pending.</p><span id="workflowBadge" class="status">AUTO</span></div>
+ <div class="card"><div class="ico">🔒</div><h3>API Security</h3><p>Provider API keys are never shown here. Cloud requests must go through the protected server.</p><span class="status">SERVER ONLY</span></div>
+ <div class="card"><div class="ico">💳</div><h3>Plan Access</h3><p id="planInfo">Login + MFA + plan entitlement are checked before paid cloud features.</p><span class="status">PROTECTED</span></div>
+</div>
+
+<section class="studioPanel">
+ <div class="sectionHead"><div><h2>Project</h2><p>Choose what to make. The model itself is selected automatically.</p></div><span id="engineState" class="tag">Engine check</span></div>
+ <div class="row2">
+  <div class="field"><label>Project Type</label><select id="projectType"><option value="auto">Auto — Best Available</option><option value="realistic">Realistic Movie</option><option value="whiteboard">Whiteboard Animation</option></select></div>
+  <div class="field"><label>Target Length</label><select id="minutes"><option>1</option><option>3</option><option>5</option><option selected>8</option><option>10</option></select></div>
+ </div>
+ <div class="field"><label>Topic / Script Prompt</label><textarea id="prompt" rows="5" placeholder="Describe the video, story, niche or educational topic…"></textarea></div>
+ <div class="actions"><button id="createBtn" class="btn primary">START CREATION</button><button id="stopBtn" class="btn danger">STOP</button></div>
+ <div class="progressTrack"><div id="progressBar"></div></div>
+ <div class="statusConsole" id="statusConsole">Ready.</div>
+</section>
+
+<section class="studioPanel">
+ <div class="sectionHead"><div><h2>Bulk Image / Scene Visual Generator</h2><p>For whiteboard and photo-motion videos, create local scene cards without cloud API cost. Future server-side AI image generation can plug into the same box.</p></div><span class="tag">LOCAL</span></div>
+ <div class="row2">
+  <div class="field"><label>Image Topics (one per line)</label><textarea id="imageTopics" rows="8" placeholder="Scene 1: introduction&#10;Scene 2: problem&#10;Scene 3: solution"></textarea></div>
+  <div><div class="field"><label>Style</label><select id="imageStyle"><option value="whiteboard">Whiteboard</option><option value="highlight">Whiteboard Highlight</option><option value="cards">Clean Topic Cards</option></select></div><button id="genImagesBtn" class="btn primary">GENERATE LOCAL VISUALS</button><div id="imageResults" class="editorImageStrip"></div></div>
+ </div>
+</section>
+
+<section class="studioPanel">
+ <div class="sectionHead"><div><h2>Live Status</h2><p>Every important step stays visible here.</p></div></div>
+ <div class="timelineStatus" id="timelineStatus">
+  <div><span>1</span><b>Device</b><em>Waiting</em></div>
+  <div><span>2</span><b>Mode</b><em>Waiting</em></div>
+  <div><span>3</span><b>Script</b><em>Waiting</em></div>
+  <div><span>4</span><b>Visuals</b><em>Waiting</em></div>
+  <div><span>5</span><b>Voice</b><em>Waiting</em></div>
+  <div><span>6</span><b>Render</b><em>Waiting</em></div>
+  <div><span>7</span><b>Export</b><em>Waiting</em></div>
+ </div>
+ <video id="preview" controls style="width:100%;margin-top:18px;border-radius:14px;background:#000"></video>
+</section>
+</div></main>
+<script src="assets/js/config.js"></script><script type="module" src="assets/js/creator.js"></script><footer class="footer"><div class="wrap footerGrid"><div><img src="assets/images/logo.svg" alt="B Add Guru Tools" style="width:210px"><p>Secure creator software, local tools and premium cloud features.</p></div><div><b>Product</b><a href="tools.html">Tools</a><a href="pricing.html">Pricing</a><a href="help.html">Help</a><a href="support.html">Support</a></div><div><b>Company</b><a href="about.html">About</a><a href="contact.html">Contact</a><a href="copyright.html">Copyright</a><a href="refund.html">Refund Policy</a></div><div><b>Legal</b><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="disclaimer.html">Disclaimer</a><a href="cookies.html">Cookies</a></div></div></footer></body></html>
