@@ -1,58 +1,133 @@
 <!doctype html><html><head><title>Cinematic Movie Factory — B Add Guru Tools</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050914"><link rel="icon" href="assets/images/logo.svg"><link rel="stylesheet" href="assets/css/style.css"></head><body><nav class="nav"><div class="wrap navin"><a class="brand" href="index.html"><img src="assets/images/logo.svg" alt="B Add Guru Tools"></a><div class="links"><a href="dashboard.html">Dashboard</a><a href="tools.html">Tools</a><a href="pricing.html">Plan</a><a href="support.html">Support</a></div></div></nav>
-<main class="section"><div class="wrap">
-<div class="factoryTop">
- <div><span class="eyebrow">ONE-CLICK AUTO PIPELINE · USER NEVER CHOOSES MODEL</span><h1>Cinematic Movie Factory</h1><p class="sectionLead">Set your channel URL, niche/master prompt and length. The system checks your account and laptop, chooses the safest available route, then researches, builds the script, character/visual references, scene plan, voice, clips, continuity chain and final preview automatically.</p></div>
- <div class="orb"><div class="orbCore"><b id="progress">0%</b><span id="stage">Waiting</span></div></div>
-</div>
 
-<div class="statusGrid">
- <div class="statusBox blue"><b>Account / Tool Access</b><span id="accessStatus">Checking entitlement…</span></div>
- <div class="statusBox green"><b>Local Engine</b><span id="engineStatus">Connecting…</span></div>
- <div class="statusBox yellow"><b>Hardware / Auto Model</b><span id="hardwareStatus">Detecting…</span></div>
- <div class="statusBox red"><b>Owner API Cost</b><span id="creditStatus">No user API settings exposed</span></div>
-</div>
+<main class="cmf-shell">
+  <section class="cmf-hero">
+    <div class="cmf-titleBlock">
+      <span class="eyebrow">CINEMATIC MOVIE FACTORY · AUTO DIRECTOR</span>
+      <h1>One click. One movie. <span>Everything automated.</span></h1>
+      <p>Paste your channel URL, choose a niche, set a master prompt and duration, then press Start. The engine handles research, script, references, characters, voice, scene generation, continuity and final merge.</p>
+    </div>
 
-<div class="statusGrid">
- <div class="statusBox blue"><b>WanGP / Wan2GP</b><span id="wangpStatus">Detecting local backend…</span></div>
- <div class="statusBox green"><b>ComfyUI</b><span id="comfyStatus">Detecting…</span></div>
- <div class="statusBox yellow"><b>Selected Route</b><span id="routeStatus">Automatic</span></div>
- <div class="statusBox red"><b>Fallback</b><span id="fallbackStatus">Whiteboard Local ready when realistic route is unavailable</span></div>
-</div>
+    <div class="worldStage">
+      <div class="stars stars-a"></div>
+      <div class="stars stars-b"></div>
+      <div class="orbit orbit-a"></div>
+      <div class="orbit orbit-b"></div>
+      <div class="orbit orbit-c"></div>
+      <div class="worldOrb">
+        <div class="worldGlow"></div>
+        <div class="worldCore">
+          <b id="progress">0%</b>
+          <span id="stage">Waiting</span>
+        </div>
+      </div>
+      <div class="worldCaption">LIVE ENGINE STATUS</div>
+    </div>
+  </section>
 
-<div id="engineHelp" class="notice" style="display:none">Local Engine is not connected. Open Dashboard and install/start the protected Local Engine once. The website remains the main interface; the local engine only performs laptop-side work.</div>
+  <section class="cmf-statusGrid">
+    <div class="cmf-status blue"><small>ACCOUNT ACCESS</small><strong id="accessStatus">Checking entitlement…</strong></div>
+    <div class="cmf-status cyan"><small>LOCAL ENGINE</small><strong id="engineStatus">Connecting…</strong></div>
+    <div class="cmf-status green"><small>HARDWARE</small><strong id="hardwareStatus">Detecting GPU / RAM…</strong></div>
+    <div class="cmf-status amber"><small>AUTO MODEL</small><strong id="routeStatus">Selecting automatically…</strong></div>
+    <div class="cmf-status violet"><small>WANGP / WAN2GP</small><strong id="wangpStatus">Detecting local backend…</strong></div>
+    <div class="cmf-status teal"><small>COMFYUI</small><strong id="comfyStatus">Detecting…</strong></div>
+    <div class="cmf-status rose"><small>OWNER API COST</small><strong id="creditStatus">No user API settings exposed</strong></div>
+    <div class="cmf-status slate"><small>FALLBACK</small><strong id="fallbackStatus">Whiteboard Local available when realistic route is unavailable</strong></div>
+  </section>
 
-<div class="factoryGrid">
-<section class="mainPanel">
- <h2>Project Setup</h2>
- <div class="field"><label>YouTube Channel URL (optional)</label><input id="channelUrl" placeholder="https://www.youtube.com/@yourchannel"></div>
- <div class="row2"><div class="field"><label>Category / Niche</label><input id="niche" value="Cinematic fantasy stories"></div><div class="field"><label>Video Length</label><select id="duration"><option value="60">1 minute</option><option value="180">3 minutes</option><option value="300">5 minutes</option><option value="420" selected>7 minutes</option><option value="600">10 minutes</option></select></div></div>
- <div class="field"><label>Master Prompt / Branding</label><textarea id="prompt" rows="6" placeholder="Describe channel branding, visual style, character tone, locations, sound, pacing, lighting or storytelling rules. Leave blank for automatic channel/niche analysis."></textarea></div>
- <div class="row2"><div class="field"><label>Optional Reference Images</label><input id="refs" type="file" multiple accept="image/*"></div><div class="field"><label>Generation Policy</label><input value="AUTO — local realistic if genuinely supported, otherwise whiteboard local; paid cloud only by owner policy" disabled></div></div>
- <div class="actions"><button id="startLocal" class="btn primary">START ONE-CLICK CREATION</button><button id="stopLocal" class="btn danger">STOP</button></div>
-</section>
+  <div id="engineHelp" class="cmf-alert" style="display:none">
+    Protected Local Engine is not connected. The website UI is live, but laptop-side rendering starts only after the private Local Engine is installed and running.
+  </div>
 
-<section class="mainPanel">
- <div class="sectionHead"><div><h2>Live Progress</h2><p class="sectionLead" id="progressText">Waiting to start.</p></div><span class="status" id="liveMode">AUTO</span></div>
- <div class="pipelineSteps" id="pipelineSteps"></div>
- <div id="liveLog" class="liveLog">Waiting for secure engine…</div>
-</section>
-</div>
+  <section class="cmf-grid">
+    <div class="cmf-panel">
+      <div class="panelHead">
+        <div><span class="stepNo">01</span><h2>Project Setup</h2></div>
+        <span class="pill">AUTO MODE</span>
+      </div>
 
-<section class="mainPanel" style="margin-top:18px">
- <div class="sectionHead"><div><h2>Progressive Movie Preview</h2><p class="sectionLead">Finished scenes accumulate in order. Scene N continues into Scene N+1 through the engine's continuity state rather than a decorative transition.</p></div><span class="status" id="readyTime">00:00 ready</span></div>
- <div class="previewBox"><video id="resultVideo" controls playsinline></video><div id="previewText">As scenes complete, the accumulated preview appears here.</div></div>
- <a id="exportBtn" class="btn gold" style="display:none;margin-top:12px" download>DOWNLOAD FINAL VIDEO</a>
-</section>
+      <label>YouTube Channel URL</label>
+      <input id="channelUrl" placeholder="https://www.youtube.com/@yourchannel">
 
-<section class="mainPanel" style="margin-top:18px">
- <div class="sectionHead"><div><h2>Scene Timeline</h2><p class="sectionLead">Scroll left/right. Each scene card shows generation status, action/continuity state and whether it has been merged into the progressive preview.</p></div><span class="status">LAST-FRAME / STATE CHAIN</span></div>
- <div id="sceneTimeline" class="sceneTimeline"><div class="empty">Scenes will appear after script division.</div></div>
-</section>
+      <div class="cmf-row">
+        <div><label>Category / Niche</label><input id="niche" value="Cinematic fantasy stories"></div>
+        <div><label>Video Length</label>
+          <select id="duration">
+            <option value="60">1 minute</option>
+            <option value="180">3 minutes</option>
+            <option value="300">5 minutes</option>
+            <option value="420" selected>7 minutes</option>
+            <option value="600">10 minutes</option>
+          </select>
+        </div>
+      </div>
 
-<section class="mainPanel" style="margin-top:18px">
- <div class="sectionHead"><div><h2>Bulk Image Generator</h2><p class="sectionLead">Local visual-card generation is available at zero API cost. On supported private backends, the owner can later route this box to a stronger image model without exposing keys to users.</p></div><span class="status">OWNER-CONTROLLED MODELS</span></div>
- <div class="row2"><div class="field"><label>Image Topic</label><textarea id="imagePrompt" rows="4" placeholder="Describe the visuals needed for the project..."></textarea></div><div class="field"><label>Count</label><select id="imageCount"><option>4</option><option selected>8</option><option>12</option><option>20</option></select><button id="genImages" class="btn primary" style="margin-top:12px">GENERATE VISUALS</button></div></div>
- <div id="imageResults" class="imageResults"></div>
-</section>
-</div></main>
+      <label>Master Prompt / Branding</label>
+      <textarea id="prompt" rows="6" placeholder="Describe the channel identity, visuals, locations, characters, lighting, sound and storytelling rules. Leave blank for automatic analysis."></textarea>
+
+      <div class="cmf-row">
+        <div><label>Optional Reference Images</label><input id="refs" type="file" multiple accept="image/*"></div>
+        <div><label>Generation Policy</label><input value="AUTO — hardware decides route" disabled></div>
+      </div>
+
+      <div class="cmf-controls">
+        <button id="startLocal" class="cmf-btn start">START ONE-CLICK CREATION</button>
+        <button id="stopLocal" class="cmf-btn stop">STOP</button>
+      </div>
+    </div>
+
+    <div class="cmf-panel">
+      <div class="panelHead">
+        <div><span class="stepNo">02</span><h2>Live Director</h2></div>
+        <span class="pill live" id="liveMode">AUTO</span>
+      </div>
+      <div id="progressText" class="directorText">Waiting to start.</div>
+      <div id="pipelineSteps" class="pipelineSteps"></div>
+      <div class="terminalHead"><span>ACTIVITY LOG</span><span class="dotPulse"></span></div>
+      <div id="liveLog" class="liveLog premiumLog">Waiting for secure engine…</div>
+    </div>
+  </section>
+
+  <section class="cmf-panel previewPanel">
+    <div class="panelHead">
+      <div><span class="stepNo">03</span><h2>Progressive Movie Preview</h2></div>
+      <span class="pill" id="readyTime">00:00 ready</span>
+    </div>
+    <div class="cinemaFrame">
+      <video id="resultVideo" controls playsinline></video>
+      <div id="previewText" class="previewEmpty">
+        <div class="playRing">▶</div>
+        <strong>Your movie grows here scene by scene</strong>
+        <span>Each completed scene is appended to the cumulative preview.</span>
+      </div>
+    </div>
+    <div class="cmf-controls center">
+      <a id="exportBtn" class="cmf-btn export" style="display:none" download>DOWNLOAD FINAL VIDEO</a>
+    </div>
+  </section>
+
+  <section class="cmf-panel">
+    <div class="panelHead">
+      <div><span class="stepNo">04</span><h2>Scene Timeline</h2></div>
+      <span class="pill">LAST-FRAME / STATE CHAIN</span>
+    </div>
+    <p class="mutedText">Scene N continues into Scene N+1 through continuity state. This is not a decorative transition timeline.</p>
+    <div id="sceneTimeline" class="sceneTimeline"><div class="empty">Scenes will appear after script division.</div></div>
+  </section>
+
+  <section class="cmf-panel">
+    <div class="panelHead">
+      <div><span class="stepNo">05</span><h2>Bulk Image Generator</h2></div>
+      <span class="pill">OWNER-CONTROLLED MODELS</span>
+    </div>
+    <p class="mutedText">Generate local visual cards at zero paid API cost. Stronger private image backends can be connected later without exposing keys to users.</p>
+    <div class="cmf-row">
+      <div><label>Image Topic</label><textarea id="imagePrompt" rows="4" placeholder="Describe the visuals needed for the project..."></textarea></div>
+      <div><label>Count</label><select id="imageCount"><option>4</option><option selected>8</option><option>12</option><option>20</option></select><button id="genImages" class="cmf-btn start full">GENERATE VISUALS</button></div>
+    </div>
+    <div id="imageResults" class="imageResults"></div>
+  </section>
+</main>
+
 <script src="assets/js/config.js"></script><script type="module" src="assets/js/movie-factory.js"></script><footer class="footer"><div class="wrap"><div style="font-size:12px;color:#8fa1b7">© 2026 B Add Guru Tools. Creator tools with secure local and cloud processing.</div></div></footer></body></html>

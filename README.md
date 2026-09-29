@@ -169,3 +169,17 @@ A web search on 2026-09-29 returned no obvious indexed site for those exact stri
 
 ### Payment truth
 Checkout activation must come only from the provider's verified webhook/transaction API. The included generic payment functions remain intentionally disabled until you receive real merchant credentials.
+
+
+## v4 Premium Engine UI
+The public Movie Factory page now restores the cinematic animated engine appearance:
+- animated globe/status core
+- moving orbit rings and stars
+- eight colored status boxes
+- live director pipeline
+- progressive preview
+- horizontal scene timeline
+- one-click project setup
+- no provider API settings visible to users
+
+Important: the public GitHub website is only the interface. Local rendering requires the private Local Engine to be installed/running on the user's laptop. Supabase authentication must also be configured before login/tool entitlements work.
