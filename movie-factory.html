@@ -1,4 +1,4 @@
-<!doctype html><html><head><title>Cinematic Movie Factory — B Add Guru Tools</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050914"><link rel="icon" href="assets/images/logo.svg"><link rel="stylesheet" href="assets/css/style.css"></head><body><nav class="nav"><div class="wrap navin"><a class="brand" href="index.html"><img src="assets/images/logo.svg" alt="B Add Guru Tools"></a><div class="links"><a href="dashboard.html">Dashboard</a><a href="tools.html">Tools</a><a href="pricing.html">Plan</a><a href="support.html">Support</a></div></div></nav>
+<!doctype html><html><head><title>Cinematic Movie Factory — B Add Guru Tools</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050914"><link rel="icon" href="assets/images/logo.svg"><link rel="stylesheet" href="assets/css/style.css"></head><body><div class="foregroundStars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><nav class="nav"><div class="wrap navin"><a class="brand" href="index.html"><img src="assets/images/logo.svg" alt="B Add Guru Tools"></a><div class="links"><a href="dashboard.html">Dashboard</a><a href="tools.html">Tools</a><a href="pricing.html">Plan</a><a href="support.html">Support</a></div></div></nav>
 
 <main class="cmf-shell">
   <section class="cmf-hero">
@@ -11,17 +11,36 @@
     <div class="worldStage">
       <div class="stars stars-a"></div>
       <div class="stars stars-b"></div>
+      <div class="digitalSweep sweep-a"></div>
+      <div class="digitalSweep sweep-b"></div>
       <div class="orbit orbit-a"></div>
       <div class="orbit orbit-b"></div>
       <div class="orbit orbit-c"></div>
+      <div class="orbit orbit-d"></div>
+
+      <div class="hudChip chip-search">⌕ SEARCH</div>
+      <div class="hudChip chip-script">▤ SCRIPT</div>
+      <div class="hudChip chip-visual">▧ VISUALS</div>
+      <div class="hudChip chip-voice">◉ VOICE</div>
+      <div class="hudChip chip-render">⚙ RENDER</div>
+      <div class="hudChip chip-sync">☁ SYNC</div>
+
       <div class="worldOrb">
         <div class="worldGlow"></div>
+        <div class="globeGrid"></div>
+        <div class="globeArc arc-a"></div>
+        <div class="globeArc arc-b"></div>
         <div class="worldCore">
+          <small>AI ENGINE</small>
           <b id="progress">0%</b>
-          <span id="stage">Waiting</span>
+          <span id="stage">WAITING</span>
+          <em id="digitalSub">SYSTEM READY</em>
         </div>
       </div>
-      <div class="worldCaption">LIVE ENGINE STATUS</div>
+
+      <div class="digitalRail rail-left"><span>GPU</span><b>AUTO</b></div>
+      <div class="digitalRail rail-right"><span>MODE</span><b id="globeMode">LOCAL</b></div>
+      <div class="worldCaption">LIVE DIGITAL ENGINE · REAL STATE VISUALIZATION</div>
     </div>
   </section>
 
@@ -40,7 +59,17 @@
     Protected Local Engine is not connected. The website UI is live, but laptop-side rendering starts only after the private Local Engine is installed and running.
   </div>
 
-  <section class="cmf-grid">
+  
+<div class="toolTabs">
+  <button class="toolTab active" data-pane="moviePane">🎬 Movie Creator</button>
+  <button class="toolTab" data-pane="captionPane">💬 Auto Captions</button>
+  <button class="toolTab" data-pane="editorPane">🖼️ Photo + Voice Editor</button>
+  <button class="toolTab" data-pane="voicePane">🎙️ Voice Studio</button>
+  <button class="toolTab" data-pane="imagePane">✨ Image Generator</button>
+  <button class="toolTab" data-pane="channelPane">📊 Channel DNA</button>
+</div>
+<div id="moviePane" class="modulePane active">
+<section class="cmf-grid">
     <div class="cmf-panel">
       <div class="panelHead">
         <div><span class="stepNo">01</span><h2>Project Setup</h2></div>
@@ -116,7 +145,29 @@
     <div id="sceneTimeline" class="sceneTimeline"><div class="empty">Scenes will appear after script division.</div></div>
   </section>
 
-  <section class="cmf-panel">
+  
+</div>
+<div id="captionPane" class="modulePane"><section class="cmf-panel">
+<div class="panelHead"><div><span class="stepNo">C</span><h2>Auto Caption Studio</h2></div><span class="pill">CAPCUT-STYLE</span></div>
+<p class="mutedText">Upload video/audio, generate captions, choose a template and apply it to all captions.</p>
+<div class="cmf-row"><div><label>Video / Audio</label><input type="file" accept="video/*,audio/*"></div><div><label>Template</label><select><option>Cinema Clean</option><option>Social Pop</option><option>Minimal Lower Third</option><option>Impact Highlight</option></select></div></div>
+<div class="cmf-row"><div><label>Animation</label><select><option>Fade</option><option>Pop</option><option>Slide Up</option><option>None</option></select></div><div><label>Apply</label><input value="APPLY TO ALL CAPTIONS" disabled></div></div>
+<button id="captionStart" class="cmf-btn start">GENERATE CAPTIONS</button><div id="captionStatus" class="directorText">Local Engine required for real processing.</div>
+</section></div>
+<div id="editorPane" class="modulePane"><section class="cmf-panel">
+<div class="panelHead"><div><span class="stepNo">E</span><h2>Smart Photo + Voiceover Editor</h2></div><span class="pill">INSHOT / CAPCUT FLOW</span></div>
+<div class="cmf-row"><div><label>Voiceover</label><input type="file" accept="audio/*"></div><div><label>Photos</label><input type="file" multiple accept="image/*"></div></div>
+<div class="cmf-row"><div><label>Background Music</label><input type="file" accept="audio/*"></div><div><label>Transition</label><select><option>Fade</option><option>Dissolve</option><option>Slide Left</option><option>Wipe</option></select></div></div>
+<button id="editorStart" class="cmf-btn start">BUILD EDITED VIDEO</button><div id="editorStatus" class="directorText">Local Engine required for rendering.</div>
+</section></div>
+<div id="voicePane" class="modulePane"><section class="cmf-panel">
+<div class="panelHead"><div><span class="stepNo">V</span><h2>Voice Studio</h2></div><span class="pill">LOCAL / OWNER CLOUD</span></div>
+<label>Script</label><textarea rows="7" placeholder="Paste narration here..."></textarea>
+<div class="cmf-row"><div><label>Voice</label><select><option>Auto Best Voice</option><option>Warm Narrator</option><option>Documentary</option></select></div><div><label>Style</label><select><option>Natural</option><option>Cinematic</option><option>Educational</option></select></div></div>
+<button id="voiceStart" class="cmf-btn start">GENERATE VOICE</button><div id="voiceStatus" class="directorText">Provider keys stay hidden from users.</div>
+</section></div>
+<div id="imagePane" class="modulePane">
+<section class="cmf-panel">
     <div class="panelHead">
       <div><span class="stepNo">05</span><h2>Bulk Image Generator</h2></div>
       <span class="pill">OWNER-CONTROLLED MODELS</span>
@@ -128,6 +179,26 @@
     </div>
     <div id="imageResults" class="imageResults"></div>
   </section>
+
+</div>
+<div id="channelPane" class="modulePane"><section class="cmf-panel">
+<div class="panelHead"><div><span class="stepNo">D</span><h2>Channel DNA Analyzer</h2></div><span class="pill">BRANDING ANALYSIS</span></div>
+<label>YouTube Channel URL</label><input id="dnaUrl" placeholder="https://www.youtube.com/@channel">
+<button id="dnaStart" class="cmf-btn start" style="margin-top:12px">ANALYZE CHANNEL</button>
+<div id="dnaStatus" class="directorText">Server-side YouTube API setup required for live analysis.</div>
+</section></div>
 </main>
 
-<script src="assets/js/config.js"></script><script type="module" src="assets/js/movie-factory.js"></script><footer class="footer"><div class="wrap"><div style="font-size:12px;color:#8fa1b7">© 2026 B Add Guru Tools. Creator tools with secure local and cloud processing.</div></div></footer></body></html>
+<script src="assets/js/config.js"></script><script type="module" src="assets/js/movie-factory.js"></script><footer class="footer"><div class="wrap"><div style="font-size:12px;color:#8fa1b7">© 2026 B Add Guru Tools. Creator tools with secure local and cloud processing.</div></div></footer>
+<script>
+document.querySelectorAll(".toolTab").forEach(b=>b.addEventListener("click",()=>{
+ document.querySelectorAll(".toolTab").forEach(x=>x.classList.remove("active"));
+ document.querySelectorAll(".modulePane").forEach(x=>x.classList.remove("active"));
+ b.classList.add("active");document.getElementById(b.dataset.pane)?.classList.add("active");
+}));
+const set=(id,t)=>{const e=document.getElementById(id);if(e)e.textContent=t};
+document.getElementById("captionStart")?.addEventListener("click",()=>set("captionStatus","Caption job ready — connect Local Engine for real transcription and export."));
+document.getElementById("editorStart")?.addEventListener("click",()=>set("editorStatus","Editor job ready — connect Local Engine for real rendering."));
+document.getElementById("voiceStart")?.addEventListener("click",()=>set("voiceStatus","Voice job ready — local or owner-controlled server route will be used."));
+document.getElementById("dnaStart")?.addEventListener("click",()=>set("dnaStatus","Channel DNA needs the server-side YouTube Data API connection."));
+</script></body></html>

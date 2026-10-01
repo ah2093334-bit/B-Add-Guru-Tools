@@ -1,0 +1,7 @@
+{
+  "engine": "B Add Guru Local Engine",
+  "latest_version": "4.0.0",
+  "private_file": "B-Add-Guru-Private-Local-Engine-latest.zip",
+  "public_ui": "B Add Guru Public Web v6 Premium Digital Engine",
+  "update_policy": "Public UI updates through GitHub Pages. Private engine updates through protected private storage."
+}

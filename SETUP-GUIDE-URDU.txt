@@ -1,0 +1,112 @@
+B ADD GURU TOOLS — ZERO SE LIVE SETUP (URDU)
+
+یہ ZIP PUBLIC WEBSITE کے لیے ہے۔ اسے GitHub Public Repository میں upload کرنا ہے۔
+PRIVATE Local Engine کو Public GitHub میں ہرگز upload نہ کریں۔
+
+حصہ 1 — GitHub Public Website
+1) ZIP extract کریں۔
+2) اپنی GitHub repository: b-add-guru-tools کھولیں۔
+3) Add file -> Upload files پر click کریں۔
+4) اس ZIP کے اندر موجود تمام files/folders upload کریں۔
+5) Commit changes دبائیں۔
+6) Settings -> Pages کھولیں۔
+7) Source = Deploy from a branch۔
+8) Branch = main اور folder = /(root)۔
+9) Save۔
+10) چند منٹ بعد GitHub Pages URL کھولیں۔
+
+حصہ 2 — Supabase بنانا
+1) supabase.com پر account بنائیں۔
+2) New Project دبائیں۔
+3) Project name: b-add-guru-tools۔
+4) strong database password رکھیں اور محفوظ کریں۔
+5) project بننے کے بعد Project Settings -> API کھولیں۔
+6) Project URL اور anon/publishable key copy کریں۔
+7) public website میں assets/js/config.js کھولیں۔
+8) PASTE_YOUR_SUPABASE_URL کی جگہ Project URL لگائیں۔
+9) PASTE_YOUR_SUPABASE_ANON_KEY کی جگہ anon/publishable key لگائیں۔
+10) Gemini/Veo/payment secret یہاں مت لگائیں۔
+11) updated config.js GitHub میں دوبارہ upload/commit کریں۔
+
+حصہ 3 — Database
+1) Supabase -> SQL Editor۔
+2) New query۔
+3) public ZIP کے supabase/schema.sql کا پورا متن paste کریں۔
+4) Run دبائیں۔
+5) اس سے profiles, subscriptions, tool_entitlements, payment/usage tables بنیں گی۔
+
+حصہ 4 — Email verification
+1) Authentication -> Providers -> Email۔
+2) Email/password sign-in enable رکھیں۔
+3) Authentication -> Email Templates۔
+4) Confirm signup template میں provider کا OTP token رکھیں۔
+5) Save۔
+نوٹ: Gmail خود کوئی custom code نہیں بنائے گا؛ Supabase verification email بھیجے گا۔
+
+حصہ 5 — Authenticator MFA
+Website میں TOTP enrollment code پہلے سے موجود ہے۔
+User email verify کرنے کے بعد QR code scan کرے گا۔
+Google Authenticator / Microsoft Authenticator / Authy جیسے app سے code لے گا۔
+صحیح code کے بعد session AAL2 ہوگا اور protected tool کھلے گا۔
+
+حصہ 6 — Private Local Engine
+Private Engine کو users کے لیے Public GitHub میں نہ ڈالیں۔
+اپنے laptop پر Private ZIP extract کریں اور INSTALL_ENGINE.bat چلائیں۔
+یہ LocalAppData میں install ہوگا اور Windows startup پر background میں چل سکتا ہے۔
+Website http://127.0.0.1:8787 پر engine detect کرے گی۔
+
+حصہ 7 — Users کے لیے Private Engine رکھنا
+Supabase -> Storage -> New bucket۔
+Bucket name: software۔
+Public bucket = OFF / Private۔
+Private Engine ZIP upload کریں اور نام رکھیں:
+B-Add-Guru-Private-Local-Engine-latest.zip
+secure-download Edge Function verified user کو temporary signed link دے گی۔
+
+حصہ 8 — Edge Functions
+Supabase CLI یا Dashboard workflow سے یہ functions deploy کریں:
+secure-download
+create-checkout
+payment-webhook
+admin-overview
+
+حصہ 9 — API Keys
+Gemini/Veo/YouTube/payment secrets PUBLIC GitHub میں نہیں جائیں گی۔
+انہیں Supabase Edge Function Secrets / server secrets میں رکھیں۔
+Browser کو صرف Supabase public/publishable key معلوم ہوگی۔
+اصل paid AI request server function کرے گا۔
+
+حصہ 10 — Payment
+Pricing page میں Test Checkout UI موجود ہے۔
+REAL payment اس وقت تک active نہ کریں جب تک approved merchant gateway نہ ملے۔
+صحیح flow:
+User plan select -> payment provider -> verified webhook -> database entitlement active۔
+Screenshot یا user کا OTP payment proof نہیں ہوگا۔
+
+حصہ 11 — Owner Admin
+اپنا account create/verify کریں۔
+Supabase Authentication -> Users میں اپنی UUID دیکھیں۔
+SQL Editor میں:
+update public.profiles set role='admin' where id='YOUR-USER-UUID';
+پھر admin.html owner dashboard استعمال کریں۔
+
+حصہ 12 — Public / Private Updates
+PUBLIC UPDATE:
+GitHub public repo میں نئی public files commit کریں -> GitHub Pages سب users کے لیے نیا UI دکھا دے گا۔
+
+PRIVATE ENGINE UPDATE:
+نئی private engine ZIP کو private Storage میں latest file کے طور پر replace/version کریں۔
+Public engine-manifest.json latest version بتاتا ہے۔
+Protected updater/download flow نئی private version دے سکتا ہے۔
+
+حصہ 13 — Domain
+Custom domain خریدنے کے بعد:
+GitHub repo -> Settings -> Pages -> Custom domain۔
+Domain لکھیں، DNS records اپنے registrar میں set کریں، پھر HTTPS enable کریں۔
+
+اہم:
+- Public website اور Private Engine دو مختلف چیزیں ہیں۔
+- Website UI/account/payment/plan controls دیتی ہے۔
+- Local Engine laptop پر rendering/system checks کرتا ہے۔
+- Paid cloud APIs ہمیشہ server-side رہیں۔
+- User کو API key کبھی نہ دکھائیں۔

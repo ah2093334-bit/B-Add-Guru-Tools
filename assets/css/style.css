@@ -61,3 +61,57 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1180px,92%);margin:auto}.na
 .mutedText{color:#8599af;font-size:11px}.imageResults{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.imageResults img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;border:1px solid #27405b}
 @media(max-width:1050px){.cmf-hero,.cmf-grid{grid-template-columns:1fr}.worldStage{height:260px}.cmf-statusGrid{grid-template-columns:1fr 1fr}}
 @media(max-width:650px){.cmf-statusGrid,.cmf-row,.pipelineSteps,.imageResults{grid-template-columns:1fr}.cmf-titleBlock h1{font-size:36px}.cmf-hero{padding:24px 20px}}
+
+/* === Global premium animated background === */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+background:
+radial-gradient(circle at 8% 20%,#fff 0 1px,transparent 1.6px),
+radial-gradient(circle at 34% 65%,#7de6ff 0 1.2px,transparent 1.8px),
+radial-gradient(circle at 72% 30%,#fff 0 1px,transparent 1.7px),
+radial-gradient(circle at 86% 78%,#69e7cf 0 1px,transparent 1.8px);
+background-size:120px 80px,170px 110px,210px 140px,260px 180px;
+opacity:.35;animation:fireflyDrift 22s linear infinite}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(circle,#ffffffb0 0 1px,transparent 1.5px);background-size:72px 72px;opacity:.16;animation:starTwinkle 4s ease-in-out infinite alternate}
+@keyframes fireflyDrift{from{background-position:-180px 0,-250px 40px,-320px 80px,-390px 20px}to{background-position:calc(100vw + 180px) 40px,calc(100vw + 250px) 0,calc(100vw + 320px) 120px,calc(100vw + 390px) 50px}}
+@keyframes starTwinkle{from{opacity:.08}to{opacity:.28}}
+.toolTabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}.toolTab{padding:9px 12px;border-radius:10px;border:1px solid #29425e;background:#081321;color:#9fb3c9;font-size:11px;cursor:pointer}.toolTab.active{background:linear-gradient(135deg,#087dff,#17c5ff);color:white;border-color:transparent}
+.modulePane{display:none}.modulePane.active{display:block}
+.checkoutModal{position:fixed;inset:0;background:#02060bcf;display:none;align-items:center;justify-content:center;z-index:9999}.checkoutCard{width:min(560px,92%);background:#091321;border:1px solid #2b405c;border-radius:20px;padding:24px;box-shadow:0 30px 100px #000}.checkoutCard h2{margin-top:0}.checkoutActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.planSelected{outline:2px solid #18b9ff;box-shadow:0 0 30px #18b9ff22}
+
+/* ===== B Add Guru Premium Digital Engine v6 ===== */
+.foregroundStars{position:fixed;inset:0;z-index:45;pointer-events:none;overflow:hidden}
+.foregroundStars i{position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:0 0 8px #fff,0 0 17px #72dfff;opacity:.82;animation:fireflyTop 14s linear infinite}
+.foregroundStars i:nth-child(1){top:7%;left:-2%;animation-delay:-1s;animation-duration:16s}.foregroundStars i:nth-child(2){top:14%;left:10%;animation-delay:-8s;animation-duration:19s}.foregroundStars i:nth-child(3){top:24%;left:29%;animation-delay:-5s;animation-duration:17s}.foregroundStars i:nth-child(4){top:35%;left:48%;animation-delay:-11s;animation-duration:21s}.foregroundStars i:nth-child(5){top:11%;left:65%;animation-delay:-3s;animation-duration:15s}.foregroundStars i:nth-child(6){top:46%;left:80%;animation-delay:-12s;animation-duration:22s}.foregroundStars i:nth-child(7){top:66%;left:4%;animation-delay:-6s;animation-duration:18s}.foregroundStars i:nth-child(8){top:75%;left:26%;animation-delay:-14s;animation-duration:23s}.foregroundStars i:nth-child(9){top:58%;left:52%;animation-delay:-7s;animation-duration:17s}.foregroundStars i:nth-child(10){top:82%;left:73%;animation-delay:-10s;animation-duration:20s}.foregroundStars i:nth-child(11){top:29%;left:91%;animation-delay:-4s;animation-duration:16s}.foregroundStars i:nth-child(12){top:91%;left:44%;animation-delay:-13s;animation-duration:24s}
+@keyframes fireflyTop{0%{transform:translate3d(-130px,0,0) scale(.55);opacity:.15}15%{opacity:1}45%{transform:translate3d(34vw,-18px,0) scale(1.15);opacity:.75}75%{opacity:.95}100%{transform:translate3d(112vw,26px,0) scale(.65);opacity:.05}}
+.nav{z-index:60}.cmf-shell,.wrap,.section,.hero{position:relative;z-index:2}
+
+.worldStage{min-height:360px}
+.worldOrb{width:220px;height:220px;overflow:visible;background:
+radial-gradient(circle at 30% 25%,#aff9ff 0 3%,#29d8ff 8%,#197cff 25%,#4523c7 47%,#111d4d 68%,#040914 78%);
+box-shadow:0 0 26px #4de7ff,0 0 68px #187cff99,0 0 110px #9d38ff42;animation:orbHue 8s ease-in-out infinite alternate}
+@keyframes orbHue{0%{filter:hue-rotate(0deg) saturate(1.05)}33%{filter:hue-rotate(24deg) saturate(1.25)}66%{filter:hue-rotate(-25deg) saturate(1.2)}100%{filter:hue-rotate(56deg) saturate(1.3)}}
+.globeGrid{position:absolute;inset:12px;border-radius:50%;opacity:.42;background:
+repeating-radial-gradient(circle at 50% 50%,transparent 0 16px,#6ef4ff35 17px 18px,transparent 19px 31px),
+repeating-linear-gradient(90deg,transparent 0 20px,#a9f7ff24 21px 22px,transparent 23px 40px);
+mix-blend-mode:screen;animation:gridTurn 11s linear infinite}
+@keyframes gridTurn{to{transform:rotate(360deg)}}
+.globeArc{position:absolute;inset:25px;border:2px solid transparent;border-top-color:#fff;border-right-color:#40eaff;border-radius:50%;filter:drop-shadow(0 0 8px #46e8ff);animation:arcSpin 3.5s linear infinite}
+.globeArc.arc-b{inset:42px;border-top-color:#ff62e8;border-right-color:#ffe45e;animation-duration:5.8s;animation-direction:reverse}
+@keyframes arcSpin{to{transform:rotate(360deg)}}
+.worldCore{inset:50px;background:radial-gradient(circle,#061527ef,#020611f5);border:1px solid #a5f5ff8a;box-shadow:inset 0 0 38px #18bfff34,0 0 24px #32dfff22}
+.worldCore small{font-size:7px;letter-spacing:.2em;color:#64f7d1;margin-bottom:3px}.worldCore b{font-size:37px;text-shadow:0 0 18px #3ee8ff}.worldCore span{font-size:9px;color:#9feaff}.worldCore em{font-style:normal;font-size:6.5px;letter-spacing:.13em;color:#ffde79;margin-top:5px}
+.orbit-d{width:360px;height:55px;transform:rotate(34deg);animation-duration:13s;border-color:#f768ff70;box-shadow:0 0 10px #b85cff33}
+.digitalSweep{position:absolute;width:370px;height:2px;left:50%;top:50%;transform-origin:left center;background:linear-gradient(90deg,transparent,#62ecff,#fff,transparent);filter:drop-shadow(0 0 10px #4feaff);opacity:.65;z-index:2;animation:sweepSpin 6.5s linear infinite}
+.sweep-b{animation-duration:10s;animation-direction:reverse;background:linear-gradient(90deg,transparent,#ff61db,#ffd95a,transparent)}
+@keyframes sweepSpin{to{transform:rotate(360deg)}}
+.hudChip{position:absolute;z-index:8;padding:6px 9px;border-radius:8px;background:#03101fe6;border:1px solid #2e9dd0;color:#9feaff;font-size:8px;font-weight:800;letter-spacing:.05em;box-shadow:0 0 16px #1dafff32;animation:hudPulse 2.3s ease-in-out infinite alternate}
+@keyframes hudPulse{to{box-shadow:0 0 26px #54e9ff72;transform:translateY(-2px)}}
+.chip-search{left:2%;top:18%}.chip-script{left:0;top:43%;border-color:#5f7dff}.chip-visual{left:8%;bottom:16%;border-color:#b462ff}.chip-voice{right:3%;top:20%;border-color:#35e4c6}.chip-render{right:0;top:48%;border-color:#ffb64d;color:#ffd991}.chip-sync{right:8%;bottom:15%;border-color:#ff5dbd;color:#ff9ed4}
+.digitalRail{position:absolute;z-index:7;bottom:16px;display:flex;gap:7px;align-items:center;padding:5px 8px;border-radius:7px;background:#040d18d9;border:1px solid #27496a;font-size:7px;color:#7b9ab6}.digitalRail b{color:#6ce9ff;font-size:8px}.rail-left{left:12%}.rail-right{right:12%}
+.worldCaption{bottom:-3px;color:#79ddff;text-shadow:0 0 10px #40cfff}
+
+.cmf-panel,.cmf-status,.toolTab,.plan,.card,.toolCard{backdrop-filter:blur(10px)}
+.cmf-btn.start,.btn.primary{position:relative;overflow:hidden}
+.cmf-btn.start::after,.btn.primary::after{content:"";position:absolute;top:-50%;left:-35%;width:26%;height:200%;background:linear-gradient(90deg,transparent,#ffffff65,transparent);transform:rotate(18deg);animation:buttonSweep 3.4s ease-in-out infinite}
+@keyframes buttonSweep{0%,55%{left:-35%}90%,100%{left:125%}}
+@media(max-width:720px){.hudChip,.digitalRail{display:none}.worldOrb{width:185px;height:185px}.worldCore{inset:43px}.foregroundStars i{opacity:.55}}

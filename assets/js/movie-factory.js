@@ -38,7 +38,7 @@ async function status(){
   $("#wangpStatus").textContent=d.wangp?.ready?`READY · ${d.wangp.detail||"WanGP detected"}`:`${d.wangp?.detail||"Not ready"}`;
   $("#comfyStatus").textContent=d.comfy?.ready?`READY · ${d.comfy.detail||"ComfyUI detected"}`:`${d.comfy?.detail||"Not ready"}`;
   $("#routeStatus").textContent=d.selected_mode_label||d.selected_mode||"Automatic";
-  $("#liveMode").textContent=(d.selected_mode||"AUTO").replaceAll("_"," ").toUpperCase();
+  $("#liveMode").textContent=(d.selected_mode||"AUTO").replaceAll("_"," ").toUpperCase(); if(document.querySelector("#digitalSub")) document.querySelector("#digitalSub").textContent=(d.message||"SYSTEM ACTIVE").slice(0,28).toUpperCase(); if(document.querySelector("#globeMode")) document.querySelector("#globeMode").textContent=(d.selected_mode||"AUTO").replaceAll("_"," ").toUpperCase().slice(0,12);
   $("#creditStatus").textContent=(d.api_credits_used||0)===0?"0 paid API credits used by local route":`${d.api_credits_used} owner API credits used`;
   $("#progress").textContent=(d.progress||0)+"%";$("#stage").textContent=d.stage||"Ready";$("#progressText").textContent=d.message||"Ready";
   $("#readyTime").textContent=fmt(d.ready_seconds||0)+" ready";
